@@ -25,14 +25,14 @@ public class UsuarioRestController {
 	@Autowired
 	private IUsuarioService usuarioService;
 	
-	//Metodo para listar todos los usuarios
+	//Método para listar todos los usuarios
 	@GetMapping("/usuarios")
 	@ResponseStatus(HttpStatus.OK)
 	public List<Usuario> getUsuarios(){
 		return usuarioService.findAll();
 	}
 
-	//Metodo para agregar un usuario
+	//Método para agregar un usuario
 	@PostMapping("/sign_up")
 	public ResponseEntity<Void> addUsuario(@RequestBody Usuario usuario){
 		if(usuarioService.findUsuario(usuario) == null) {
