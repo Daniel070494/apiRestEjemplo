@@ -15,7 +15,7 @@ public interface IUsuarioDao extends CrudRepository<Usuario, Long> {
 	
 	public Optional<Usuario> findById(Long id);
 	
-	@Query("select * from Usuario u where u.id=?1")
+	@Query("select u from Usuario u where u.id=?1")
 	public Usuario findByIdSQL(Long id);
 
 }
